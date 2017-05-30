@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Install ncurses locally
 wget -O ncurses.tar.gz https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
 mkdir ncurses
 tar -xvzf ncurses.tar.gz -C ncurses --strip-components 1
@@ -12,6 +13,8 @@ make
 make install
 cd ..
 rm -rf ncurses
+
+# Install zsh locally
 wget -O zsh.tar.gz https://sourceforge.net/projects/zsh/files/latest/download
 mkdir zsh
 tar -xvzf zsh.tar.gz -C zsh --strip-components 1
@@ -25,6 +28,7 @@ make install
 cd ..
 rm -rf zsh
 
+# Start to set up local settings
 cd $HOME
 
 # Put in my settings
