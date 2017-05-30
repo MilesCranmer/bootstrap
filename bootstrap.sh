@@ -24,3 +24,23 @@ make
 make install
 cd ..
 rm -rf zsh
+
+cd $HOME
+
+# Put in my settings
+mv .zshrc .zshrc.backup
+mv .vimrc .vimrc.backup
+wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
+wget -O .vimrc https://raw.githubusercontent.com/milescranmer/vimrc/master/.vimrc
+
+# Turn of solarized temporarily
+sed -i -- 's/colorscheme solarized/" colorscheme solarized/g' .vimrc
+
+# Install vundle
+git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+
+# Install plugins
+vim +PluginInstall +qall
+
+# Turn back on solarized
+sed -i -- 's/" colorscheme solarized/colorscheme solarized/g' .vimrc
