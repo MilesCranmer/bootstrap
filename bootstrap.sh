@@ -28,9 +28,7 @@ rm -rf zsh
 cd $HOME
 
 # Put in my settings
-mv .zshrc .zshrc.backup
 mv .vimrc .vimrc.backup
-wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
 wget -O .vimrc https://raw.githubusercontent.com/milescranmer/vimrc/master/.vimrc
 
 # Turn of solarized temporarily
