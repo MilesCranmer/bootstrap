@@ -42,3 +42,14 @@ vim +PluginInstall +qall
 
 # Turn back on solarized
 sed -i -- 's/" colorscheme solarized/colorscheme solarized/g' .vimrc
+
+# Install oh-my-zsh
+wget -O install-oh-my-zsh.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+sed -i -- 's/CHECK_ZSH_INSTALLED=/CHECK_ZSH_INSTALLED=1\n#/g' install-oh-my-zsh.sh 
+chmod +x install-oh-my-zsh.sh
+./install-oh-my-zsh.sh
+rm install-oh-my-zsh.sh
+
+# Put in the .zshrc
+mv .zshrc .zshrc.backup
+wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
