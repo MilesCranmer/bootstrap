@@ -59,4 +59,4 @@ mv .zshrc .zshrc.backup
 wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
 
 # Download zsh-autosuggestions
-git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
