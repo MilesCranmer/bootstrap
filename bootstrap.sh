@@ -60,10 +60,3 @@ wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshr
 
 # Download zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-# Install nvidia-docker and nvidia-docker-plugin
-wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1_amd64.tar.xz
-sudo tar --strip-components=1 -C /usr/bin -xvf /tmp/nvidia-docker*.tar.xz && rm /tmp/nvidia-docker*.tar.xz
-
-# Run nvidia-docker-plugin
-sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log
