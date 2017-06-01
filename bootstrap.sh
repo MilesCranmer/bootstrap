@@ -1,32 +1,32 @@
 #!/bin/bash
 
-# Install ncurses locally
-wget -O ncurses.tar.gz https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
-mkdir ncurses
-tar -xvzf ncurses.tar.gz -C ncurses --strip-components 1
-rm ncurses.tar.gz
-cd ncurses
-export CXXFLAGS="$CXXFLAGS -fPIC"
-export CFLAGS="$CFLAGS -fPIC"
-./configure --prefix=$HOME
-make
-make install
-cd ..
-rm -rf ncurses
+# # Install ncurses locally
+# wget -O ncurses.tar.gz https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
+# mkdir ncurses
+# tar -xvzf ncurses.tar.gz -C ncurses --strip-components 1
+# rm ncurses.tar.gz
+# cd ncurses
+# export CXXFLAGS="$CXXFLAGS -fPIC"
+# export CFLAGS="$CFLAGS -fPIC"
+# ./configure --prefix=$HOME
+# make
+# make install
+# cd ..
+# rm -rf ncurses
 
-# Install zsh locally
-wget -O zsh.tar.gz https://sourceforge.net/projects/zsh/files/latest/download
-mkdir zsh
-tar -xvzf zsh.tar.gz -C zsh --strip-components 1
-rm zsh.tar.gz
-cd zsh
-export CPPFLAGS="$CPPFLAGS -I$HOME/include"
-export LDFLAGS="$LDFLAGS -L$HOME/lib"
-./configure --prefix=$HOME
-make
-make install
-cd ..
-rm -rf zsh
+# # Install zsh locally
+# wget -O zsh.tar.gz https://sourceforge.net/projects/zsh/files/latest/download
+# mkdir zsh
+# tar -xvzf zsh.tar.gz -C zsh --strip-components 1
+# rm zsh.tar.gz
+# cd zsh
+# export CPPFLAGS="$CPPFLAGS -I$HOME/include"
+# export LDFLAGS="$LDFLAGS -L$HOME/lib"
+# ./configure --prefix=$HOME
+# make
+# make install
+# cd ..
+# rm -rf zsh
 
 # Start to set up local settings
 cd $HOME
@@ -60,3 +60,10 @@ wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshr
 
 # Download zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# Install nvidia-docker and nvidia-docker-plugin
+wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1_amd64.tar.xz
+sudo tar --strip-components=1 -C /usr/bin -xvf /tmp/nvidia-docker*.tar.xz && rm /tmp/nvidia-docker*.tar.xz
+
+# Run nvidia-docker-plugin
+sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log
