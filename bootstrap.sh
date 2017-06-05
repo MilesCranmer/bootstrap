@@ -42,7 +42,7 @@ sed -i -- 's/colorscheme solarized/" colorscheme solarized/g' .vimrc
 git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # Install some python modules for vim plugins
-pip install requests beautifulsoup4
+pip install google-api-python-client Cython py-stackexchange lxml
 
 # Install plugins
 vim +PluginInstall +qall
