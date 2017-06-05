@@ -32,11 +32,11 @@
 cd $HOME
 
 # Put in my settings
-mv .vimrc .vimrc.backup
-wget -O .vimrc https://raw.githubusercontent.com/milescranmer/vimrc/master/.vimrc
+mv $HOME/.vimrc $HOME/.vimrc.backup
+wget -O $HOME/.vimrc https://raw.githubusercontent.com/milescranmer/vimrc/master/.vimrc
 
 # Turn of solarized temporarily
-sed -i -- 's/colorscheme solarized/" colorscheme solarized/g' .vimrc
+sed -i -- 's/colorscheme solarized/" colorscheme solarized/g' $HOME/.vimrc
 
 # Install vundle
 git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
@@ -48,7 +48,7 @@ pip install google-api-python-client Cython py-stackexchange lxml
 vim +PluginInstall +qall
 
 # Turn back on solarized
-sed -i -- 's/" colorscheme solarized/colorscheme solarized/g' .vimrc
+sed -i -- 's/" colorscheme solarized/colorscheme solarized/g' $HOME/.vimrc
 
 # Install oh-my-zsh
 wget -O install-oh-my-zsh.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
@@ -58,8 +58,8 @@ chmod +x install-oh-my-zsh.sh
 rm install-oh-my-zsh.sh
 
 # Put in the .zshrc
-mv .zshrc .zshrc.backup
-wget -O .zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
+mv $HOME/.zshrc $HOME/.zshrc.backup
+wget -O $HOME/.zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
 
 # Download zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
