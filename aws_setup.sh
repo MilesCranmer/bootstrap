@@ -11,9 +11,9 @@ sudo service docker start
 
 {
     sudo usermod -aG docker $USER
-    exit 0
 } || {
     echo "Already in docker group" > /dev/stdout
+    exit 0
 }
 
 # Install nvidia-docker and nvidia-docker-plugin
