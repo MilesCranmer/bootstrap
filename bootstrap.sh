@@ -64,5 +64,9 @@ rm install-oh-my-zsh.sh
 mv $HOME/.zshrc $HOME/.zshrc.backup
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/milescranmer/zshrc/master/.zshrc
 
+# Download vim-stream
+wget https://raw.githubusercontent.com/MilesCranmer/vim-stream/master/vims -O /bin/vims
+chmod +x /bin/vims
+
 # Download zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
