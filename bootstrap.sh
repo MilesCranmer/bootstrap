@@ -48,7 +48,7 @@ pip install google-api-python-client Cython py-stackexchange lxml
 vim +PluginInstall +qall
 
 # Get command-line GSO
-sudo cp $HOME/.vim/bundle/GooglingStackOverflow.vim/tools/gso.sh /bin/gso
+cp $HOME/.vim/bundle/GooglingStackOverflow.vim/tools/gso.sh /bin/gso
 
 # Turn back on solarized
 sed -i -- 's/" colorscheme solarized/colorscheme solarized/g' $HOME/.vimrc
