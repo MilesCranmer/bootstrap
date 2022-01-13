@@ -14,19 +14,19 @@
 # cd ..
 # rm -rf ncurses
 
-# # Install zsh locally
-# wget -O zsh.tar.gz https://sourceforge.net/projects/zsh/files/latest/download
-# mkdir zsh
-# tar -xvzf zsh.tar.gz -C zsh --strip-components 1
-# rm zsh.tar.gz
-# cd zsh
-# export CPPFLAGS="$CPPFLAGS -I$HOME/include"
-# export LDFLAGS="$LDFLAGS -L$HOME/lib"
-# ./configure --prefix=$HOME
-# make
-# make install
-# cd ..
-# rm -rf zsh
+# Install zsh locally
+wget -O zsh.tar.gz https://sourceforge.net/projects/zsh/files/latest/download
+mkdir zsh
+tar -xvzf zsh.tar.gz -C zsh --strip-components 1
+rm zsh.tar.gz
+cd zsh
+export CPPFLAGS="$CPPFLAGS -I$HOME/include"
+export LDFLAGS="$LDFLAGS -L$HOME/lib"
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -rf zsh
 
 # Start to set up local settings
 cd $HOME
